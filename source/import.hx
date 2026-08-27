@@ -1,10 +1,10 @@
 #if !macro
-//Discord API
+// Discord API
 #if DISCORD_ALLOWED
 import funkin.api.discord.Discord;
 #end
 
-//Psych
+// Psych
 #if LUA_ALLOWED
 import llua.*;
 import llua.Lua;
@@ -26,19 +26,9 @@ import funkin.mobile.input.MobileInputManager;
 import funkin.mobile.backend.TouchUtil;
 import flixel.system.scaleModes.MobileScaleMode;
 
-// Android
-#if android
-import android.content.Context as AndroidContext;
-import android.widget.Toast as AndroidToast;
-import android.os.Environment as AndroidEnvironment;
-import android.Permissions as AndroidPermissions;
-import android.Settings as AndroidSettings;
-import android.Tools as AndroidTools;
-import android.os.Build.VERSION as AndroidVersion;
-import android.os.Build.VERSION_CODES as AndroidVersionCode;
-import android.os.BatteryManager as AndroidBatteryManager;
-#end
+// ⚠️ Bloco Android removido (não compila em Haxe)
 
+// System / Platform
 #if sys
 import sys.*;
 import sys.io.*;
@@ -46,6 +36,7 @@ import sys.io.*;
 import js.html.*;
 #end
 
+// Psych Engine core
 import funkin.Paths;
 import funkin.input.Controls;
 import funkin.input.Cursor;
@@ -65,7 +56,7 @@ import funkin.modding.Mods;
 import funkin.ui.Language;
 import funkin.mobile.backend.StorageUtil;
 
-import funkin.ui.components.*; //Psych-UI
+import funkin.ui.components.*; // Psych-UI
 
 import funkin.ui.Alphabet;
 import funkin.play.stage.BGSprite;
@@ -78,7 +69,7 @@ import flxanimate.*;
 import flxanimate.PsychFlxAnimate as FlxAnimate;
 #end
 
-//Flixel
+// Flixel
 import flixel.sound.FlxSound;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -96,6 +87,6 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.addons.transition.FlxTransitionableState;
 import funkin.graphics.shaders.flixel.system.FlxShader;
 
-// Uh?
+// Utils
 using StringTools;
 #end
