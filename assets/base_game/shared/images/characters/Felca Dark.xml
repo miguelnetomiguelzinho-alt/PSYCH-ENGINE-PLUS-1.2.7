@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Felca Dark.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="1461" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="left0000" x="974" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="left0001" x="487" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="left0002" x="1461" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="down0000" x="487" y="1846" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="down0001" x="2000" y="0" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="down0002" x="1461" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="up0000" x="0" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="up0001" x="2000" y="620" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="up0002" x="1461" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="right0000" x="2000" y="620" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="right0001" x="0" y="1846" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="right0002" x="1461" y="1226" width="487" height="620" frameX="-334" frameY="-102" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="AIdle0000" x="1000" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aleft0000" x="1500" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aleft0001" x="500" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aleft0002" x="1000" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Adown0000" x="1500" y="0" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Adown0001" x="500" y="0" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Adown0002" x="1000" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aup0000" x="0" y="0" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aup0001" x="0" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aup0002" x="1000" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aright0000" x="0" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aright0001" x="1000" y="0" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+	<SubTexture name="Aright0002" x="1000" y="613" width="500" height="613" frameX="-334" frameY="-109" frameWidth="1280" frameHeight="720"/>
+</TextureAtlas>

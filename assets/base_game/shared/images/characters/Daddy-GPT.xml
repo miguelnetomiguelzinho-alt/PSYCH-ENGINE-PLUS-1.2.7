@@ -1,0 +1,25 @@
+<TextureAtlas imagePath="sprite_final_sheet.png">
+	<!-- idle -->
+	<SubTexture name="idle0" x="0" y="0" width="420" height="720"/>
+	<SubTexture name="idle1" x="420" y="0" width="420" height="720"/>
+	<SubTexture name="idle2" x="840" y="0" width="420" height="720"/>
+	<SubTexture name="idle3" x="1260" y="0" width="420" height="720"/>
+
+	<!-- left -->
+	<SubTexture name="left0" x="0" y="720" width="420" height="720"/>
+	<SubTexture name="left1" x="420" y="720" width="420" height="720"/>
+	<SubTexture name="left2" x="840" y="720" width="420" height="720"/>
+	<SubTexture name="left3" x="1260" y="720" width="420" height="720"/>
+
+	<!-- down -->
+	<SubTexture name="down0" x="0" y="1440" width="420" height="720"/>
+	<SubTexture name="down1" x="420" y="1440" width="420" height="720"/>
+	<SubTexture name="down2" x="840" y="1440" width="420" height="720"/>
+	<SubTexture name="down3" x="1260" y="1440" width="420" height="720"/>
+
+	<!-- up -->
+	<SubTexture name="up0" x="0" y="2160" width="420" height="720"/>
+	<SubTexture name="up1" x="420" y="2160" width="420" height="720"/>
+	<SubTexture name="up2" x="840" y="2160" width="420" height="720"/>
+	<SubTexture name="up3" x="1260" y="2160" width="420" height="720"/>
+</TextureAtlas>

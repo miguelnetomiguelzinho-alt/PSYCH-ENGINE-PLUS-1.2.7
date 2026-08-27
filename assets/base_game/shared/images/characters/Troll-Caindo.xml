@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Troll-Caindo.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="caindo0000" x="1208" y="0" width="536" height="670" frameX="-178" frameY="-92" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0001" x="621" y="0" width="587" height="723" frameX="-138" frameY="-39" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0002" x="0" y="0" width="621" height="736" frameX="-108" frameY="-25" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0003" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0004" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0005" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0006" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0007" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0008" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0009" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0010" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0011" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0012" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0013" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0014" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0015" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0016" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0017" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0018" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0019" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0020" x="949" y="736" width="473" height="414" frameX="-259" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0021" x="475" y="736" width="474" height="414" frameX="-255" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0022" x="0" y="736" width="475" height="414" frameX="-250" frameY="-347" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0023" x="0" y="1150" width="466" height="394" frameX="-191" frameY="-368" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0024" x="466" y="1150" width="508" height="244" frameX="-12" frameY="-529" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0025" x="447" y="1544" width="450" height="162" frameX="-4" frameY="-604" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0026" x="0" y="1544" width="447" height="164" frameX="-7" frameY="-602" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="caindo0027" x="974" y="1150" width="450" height="163" frameX="-4" frameY="-603" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="loopcaido0000" x="974" y="1150" width="450" height="163" frameX="-4" frameY="-603" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

@@ -1,0 +1,29 @@
+{
+	"songs": [
+		[
+			"Evaporate",
+			"mouse-p2",
+			[0, 0, 0]
+		],
+		[
+			"Sirokou",
+			"mouse-p3",
+			[0, 175, 0]
+		],
+	]
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "scrapped",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "The BASEMENT SHOW (Creepypasta)",
+	"weekName": "weekBasement",
+	"freeplayColor": [44, 100, 86],
+	"hideStoryMode": true,
+	"weekBefore": "",
+	"startUnlocked": true
+}

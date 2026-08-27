@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Formiga Pianista.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="0" y="224" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="idle0001" x="0" y="0" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="left0000" x="0" y="448" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="left0001" x="0" y="448" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="left0002" x="558" y="224" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="down0000" x="186" y="0" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="down0001" x="186" y="0" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="down0002" x="186" y="224" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="up0000" x="186" y="448" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="up0001" x="186" y="448" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="up0002" x="558" y="0" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="right0000" x="372" y="224" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="right0001" x="372" y="224" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+	<SubTexture name="right0002" x="372" y="0" width="186" height="224" frameX="-9" frameY="-4" frameWidth="200" frameHeight="236"/>
+</TextureAtlas>

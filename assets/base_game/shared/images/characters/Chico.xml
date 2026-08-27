@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Chico.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="1157" y="1219" width="415" height="491" frameX="-181" frameY="-282" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0001" x="754" y="1219" width="403" height="507" frameX="-185" frameY="-266" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0002" x="1852" y="519" width="385" height="523" frameX="-191" frameY="-250" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0003" x="1852" y="0" width="388" height="519" frameX="-190" frameY="-254" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0004" x="1852" y="0" width="388" height="519" frameX="-190" frameY="-254" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="left0000" x="0" y="0" width="652" height="721" frameX="0" frameY="-138" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="left0001" x="0" y="0" width="652" height="721" frameX="0" frameY="-138" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="left0002" x="652" y="0" width="584" height="655" frameX="-73" frameY="-171" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="down0000" x="1236" y="0" width="616" height="450" frameX="-83" frameY="-343" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="down0001" x="1236" y="0" width="616" height="450" frameX="-83" frameY="-343" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="down0002" x="602" y="721" width="577" height="483" frameX="-105" frameY="-310" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="up0000" x="0" y="1219" width="358" height="602" frameX="-182" frameY="-162" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="up0001" x="0" y="1219" width="358" height="602" frameX="-182" frameY="-162" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="up0002" x="358" y="1219" width="396" height="540" frameX="-163" frameY="-224" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="right0000" x="0" y="721" width="602" height="498" frameX="-168" frameY="-265" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="right0001" x="0" y="721" width="602" height="498" frameX="-168" frameY="-265" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="right0002" x="1236" y="450" width="492" height="502" frameX="-168" frameY="-261" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

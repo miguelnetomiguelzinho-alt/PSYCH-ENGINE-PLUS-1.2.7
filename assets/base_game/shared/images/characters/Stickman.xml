@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Stickman.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="343" y="1342" width="399" height="768" frameX="-137" frameY="-191" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="idle0001" x="1928" y="0" width="401" height="770" frameX="-137" frameY="-191" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="left0000" x="2329" y="769" width="373" height="768" frameX="-94" frameY="-192" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="left0001" x="2329" y="0" width="374" height="769" frameX="-108" frameY="-191" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="down0000" x="0" y="0" width="637" height="575" frameX="-37" frameY="-385" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="down0001" x="1038" y="0" width="457" height="727" frameX="-119" frameY="-233" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="up0000" x="0" y="1342" width="343" height="898" frameX="-162" frameY="-62" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="up0001" x="637" y="0" width="401" height="863" frameX="-136" frameY="-97" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="right0000" x="0" y="575" width="455" height="767" frameX="-196" frameY="-193" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="right0001" x="1495" y="0" width="433" height="767" frameX="-173" frameY="-193" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>

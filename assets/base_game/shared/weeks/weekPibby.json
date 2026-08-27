@@ -1,0 +1,34 @@
+{
+	"songs": [
+		[
+			"Retcon",
+			"icon-gumball",
+			[0, 0, 255]
+		],
+		[
+			"Suffering-Siblings",
+			"icon-finn",
+			[128, 128, 128]
+		],
+		[
+		   "Blueballled"
+		   "corrompido-bf"
+		   [0, 0, 255]
+		],
+	]
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "scrapped",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "Inspirado em Pibby APOCALYPSE",
+	"weekName": "weekPibby",
+	"freeplayColor": [44, 100, 86],
+	"hideStoryMode": true,
+	"weekBefore": "",
+	"startUnlocked": true
+}

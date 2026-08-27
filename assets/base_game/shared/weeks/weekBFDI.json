@@ -1,0 +1,34 @@
+{
+	"songs": [
+		[
+			"Blue-golfball",
+			"icon-bluegolfball",
+			[100, 180, 255]
+		],
+		[
+			"Wrong-finger",
+			"icon-pin",
+			[50, 255, 50]
+		],
+		[
+		   "Kms"
+		   "icon-beanie"
+		   [0, 0, 139]
+		],
+	]
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "scrapped",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "Até parece que um Brasileiro gosta de BFDI (EU)",
+	"weekName": "weekBFDI",
+	"freeplayColor": [44, 100, 86],
+	"hideStoryMode": true,
+	"weekBefore": "",
+	"startUnlocked": true
+}

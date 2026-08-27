@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Barata Baterista.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="danceLeft0000" x="0" y="0" width="312" height="336" frameX="-228" frameY="-193" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="danceLeft0001" x="624" y="336" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="danceLeft0002" x="312" y="0" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="danceRight0000" x="312" y="671" width="312" height="333" frameX="-228" frameY="-196" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="danceRight0001" x="312" y="336" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="danceRight0002" x="936" y="0" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="idle0000" x="624" y="0" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0000" x="936" y="335" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0001" x="0" y="336" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0002" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0003" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0004" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0005" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0006" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0007" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="tick0008" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+	<SubTexture name="altIdle0000" x="0" y="671" width="312" height="335" frameX="-228" frameY="-194" frameWidth="768" frameHeight="768"/>
+</TextureAtlas>

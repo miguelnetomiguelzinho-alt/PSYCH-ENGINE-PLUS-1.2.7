@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stealer_noob.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="down00000000" x="0" y="344" width="329" height="361" frameX="-715" frameY="-558" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="down00010000" x="683" y="321" width="298" height="361" frameX="-715" frameY="-558" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="down00020000" x="1264" y="0" width="231" height="361" frameX="-715" frameY="-558" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="idle00000000" x="1264" y="361" width="231" height="354" frameX="-638" frameY="-605" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="idle00010000" x="525" y="705" width="237" height="328" frameX="-632" frameY="-628" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="left00000000" x="683" y="0" width="344" height="321" frameX="-559" frameY="-630" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="left00010000" x="226" y="705" width="299" height="337" frameX="-604" frameY="-610" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="right00000000" x="351" y="0" width="332" height="342" frameX="-689" frameY="-593" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="right00010000" x="0" y="0" width="351" height="344" frameX="-663" frameY="-598" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="right00020000" x="351" y="342" width="325" height="344" frameX="-663" frameY="-598" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="up00000000" x="0" y="705" width="226" height="448" frameX="-701" frameY="-498" frameWidth="1424" frameHeight="1467"/>
+	<SubTexture name="up00010000" x="1027" y="0" width="237" height="429" frameX="-695" frameY="-517" frameWidth="1424" frameHeight="1467"/>
+</TextureAtlas>

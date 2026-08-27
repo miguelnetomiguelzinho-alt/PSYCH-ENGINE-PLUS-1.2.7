@@ -1,0 +1,497 @@
+package funkin.ui.mainmenu;
+
+import flixel.FlxObject;
+import flixel.effects.FlxFlicker;
+import funkin.ui.debug.MasterEditorMenu;
+import funkin.ui.options.OptionsState;
+import flixel.text.FlxText;
+
+#if funkin.vis
+import funkin.vis.dsp.SpectralAnalyzer;
+#end
+
+enum MainMenuColumn {
+	LEFT;
+	CENTER;
+	RIGHT;
+}
+
+class MainMenuState extends MusicBeatState
+{
+	public static var fnfVersion:String = '0.2.8';
+	public static var plusEngineBaseVersion:String = '1.2.7'; // Stable semantic version
+	#if DEV_BUILD
+	public static var devUpdate:String = 'Build 450'; // Build xxx or Beta x
+	public static var plusEngineVersion:String = plusEngineBaseVersion + ' (' + devUpdate + ')';
+	#else
+	public static var plusEngineVersion:String = plusEngineBaseVersion;
+	#end
+	public static var psychEngineVersion:String = "1.0.4 (" + plusEngineBaseVersion + ")"; // This is also used for Discord RPC
+	public static var curSelected:Int = 0;
+	public static var curColumn:MainMenuColumn = CENTER;
+	var allowMouse:Bool = true; //Turn this off to block mouse movement in menus
+
+	var menuItems:FlxTypedGroup<FlxSprite>;
+	var leftItem:FlxSprite;
+	var rightItem:FlxSprite;
+
+	//Centered/Text options
+	var optionShit:Array<String> = [
+		'story_mode',
+		'freeplay',
+		#if MODS_ALLOWED 'mods', #end
+		'credits'
+	];
+
+	var leftOption:String = #if ACHIEVEMENTS_ALLOWED 'achievements' #else null #end;
+	var rightOption:String = 'options';
+
+	var magenta:FlxSprite;
+	var camFollow:FlxObject;
+	
+	var visualizerEnabled:Bool = true;
+
+	// Full-width bottom spectral visualizer
+	#if funkin.vis
+	var _vizBars:FlxTypedGroup<FlxSprite>;
+	var _analyzer:SpectralAnalyzer = null;
+	var _analyzerLevels:Array<funkin.vis.dsp.SpectralAnalyzer.Bar> = null;
+	var _needsAnalyzerInit:Bool = false;
+	static inline var VIZ_BAR_COUNT:Int = 256;
+	static inline var VIZ_BAR_MAX_H:Int = 240;
+	#end
+
+	static var showOutdatedWarning:Bool = true;
+	static var updateWarningShown:Bool = false; // Show update warning only once per session
+	
+	override function create()
+	{
+		super.create();
+
+		#if MODS_ALLOWED
+		Mods.pushGlobalMods();
+		#end
+		Mods.loadTopMod();
+
+		#if DISCORD_ALLOWED
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("In the Menus", null);
+		#end
+
+		persistentUpdate = persistentDraw = true;
+
+		var yScroll:Float = 0.25;
+		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
+		bg.antialiasing = ClientPrefs.data.antialiasing;
+		bg.scrollFactor.set(0, yScroll);
+		bg.setGraphicSize(Std.int(bg.width * 1.175));
+		bg.updateHitbox();
+		bg.screenCenter();
+		add(bg);
+
+		// Full-width bottom spectral visualizer bars — behind all UI.
+		#if funkin.vis
+		_vizBars = new FlxTypedGroup<FlxSprite>();
+		var vizBarW:Int = Std.int(FlxG.width / VIZ_BAR_COUNT);
+		for(i in 0...VIZ_BAR_COUNT) {
+			var vbar = new FlxSprite();
+			vbar.makeGraphic(vizBarW - 1, VIZ_BAR_MAX_H, FlxColor.WHITE);
+			vbar.setGraphicSize(vizBarW - 1, 2);
+			vbar.updateHitbox();
+			vbar.x = i * vizBarW;
+			vbar.y = FlxG.height - 2;
+			vbar.alpha = 0.0;
+			vbar.scrollFactor.set();
+			_vizBars.add(vbar);
+		}
+		add(_vizBars);
+		_needsAnalyzerInit = true;
+		#end
+
+
+		camFollow = new FlxObject(0, 0, 1, 1);
+		add(camFollow);
+
+		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta.antialiasing = ClientPrefs.data.antialiasing;
+		magenta.scrollFactor.set(0, yScroll);
+		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
+		magenta.updateHitbox();
+		magenta.screenCenter();
+		magenta.visible = false;
+		magenta.color = 0xFFfd719b;
+		add(magenta);
+
+		menuItems = new FlxTypedGroup<FlxSprite>();
+		add(menuItems);
+
+		for (num => option in optionShit)
+		{
+			var item:FlxSprite = createMenuItem(option, 0, (num * 140) + 90);
+			item.y += (4 - optionShit.length) * 70; // Offsets for when you have anything other than 4 items
+			item.screenCenter(X);
+		}
+
+		if (leftOption != null)
+			leftItem = createMenuItem(leftOption, 60, 490);
+		if (rightOption != null)
+		{
+			rightItem = createMenuItem(rightOption, FlxG.width - 60, 490);
+			rightItem.x -= rightItem.width;
+		}
+
+		#if DEV_BUILD
+		var devText:FlxText = new FlxText(12, FlxG.height - 64, 0, "Dev Version: " + devUpdate, 12);
+		devText.scrollFactor.set();
+		devText.setFormat(Paths.font("phantom.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(devText);
+		#end
+		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
+		psychVer.scrollFactor.set();
+		psychVer.setFormat(Paths.font("phantom.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(psychVer);
+		var fnfVer:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v" + fnfVersion, 12);
+		fnfVer.scrollFactor.set();
+		fnfVer.setFormat(Paths.font("phantom.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(fnfVer);
+		
+		changeItem();
+
+		#if ACHIEVEMENTS_ALLOWED
+		// Unlocks "Freaky on a Friday Night" achievement if it's a Friday and between 18:00 PM and 23:59 PM
+		var leDate = Date.now();
+		if (leDate.getDay() == 5 && leDate.getHours() >= 18)
+			Achievements.unlock('friday_night_play');
+
+		#if MODS_ALLOWED
+		Achievements.reloadList();
+		#end
+		#end
+
+		#if CHECK_FOR_UPDATES
+		if (showOutdatedWarning && ClientPrefs.data.checkForUpdates && !updateWarningShown) {
+			// Only show warning if update is available and hasn't been shown before
+			if (CoolUtil.hasUpdate) {
+				persistentUpdate = false;
+				updateWarningShown = true; // Mark as shown to avoid repetitions
+				openSubState(new funkin.play.substates.OutdatedSubState());
+			}
+		}
+		#end
+
+		FlxG.camera.follow(camFollow, null, 0.15);
+
+		addTouchPad('NONE', 'E_X');
+	}
+
+	function createMenuItem(name:String, x:Float, y:Float):FlxSprite
+	{
+		var menuItem:FlxSprite = new FlxSprite(x, y);
+		menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_$name');
+		menuItem.animation.addByPrefix('idle', '$name idle', 24, true);
+		menuItem.animation.addByPrefix('selected', '$name selected', 24, true);
+		menuItem.animation.play('idle');
+		menuItem.updateHitbox();
+		
+		menuItem.antialiasing = ClientPrefs.data.antialiasing;
+		menuItem.scrollFactor.set();
+		menuItems.add(menuItem);
+		return menuItem;
+	}
+
+	var selectedSomethin:Bool = false;
+
+	var timeNotMoving:Float = 0;
+	override function update(elapsed:Float)
+	{
+		if (FlxG.sound.music.volume < 0.8)
+			FlxG.sound.music.volume = Math.min(FlxG.sound.music.volume + 0.5 * elapsed, 0.8);
+
+		// Spectral visualizer update
+		#if funkin.vis
+		if(_needsAnalyzerInit && FlxG.sound.music != null && FlxG.sound.music.playing) {
+			@:privateAccess
+			if(FlxG.sound.music._channel != null && FlxG.sound.music._channel.__audioSource != null) {
+				// Improved spectral analyzer calibration
+				_analyzer = new SpectralAnalyzer(FlxG.sound.music._channel.__audioSource, VIZ_BAR_COUNT, 0.08, 25);
+				// Better frequency range for music visualization
+				_analyzer.minFreq = 40;
+				_analyzer.maxFreq = 18000;
+				// Adjust dB range for better sensitivity
+				_analyzer.minDb = -80;
+				_analyzer.maxDb = -15;
+				#if !web
+				// Higher FFT size for better frequency resolution
+				_analyzer.fftN = 512;
+				#end
+				_needsAnalyzerInit = false;
+			}
+		}
+		if(_vizBars != null) {
+			var vizBarW:Int = Std.int(FlxG.width / VIZ_BAR_COUNT);
+			if(_analyzer != null) {
+				_analyzerLevels = _analyzer.getLevels(_analyzerLevels);
+				for(i in 0..._vizBars.members.length) {
+					var vbar = _vizBars.members[i];
+					if(vbar == null) continue;
+					var level:Float = (i < _analyzerLevels.length) ? _analyzerLevels[i].value : 0.0;
+					var h:Int = Std.int(Math.max(2, level * VIZ_BAR_MAX_H));
+					vbar.setGraphicSize(vizBarW - 1, h);
+					vbar.updateHitbox();
+					vbar.x = i * vizBarW;
+					vbar.y = FlxG.height - h;
+					vbar.alpha = 1.0;
+				}
+			} else {
+				for(i in 0..._vizBars.members.length) {
+					var vbar = _vizBars.members[i];
+					if(vbar == null) continue;
+					vbar.setGraphicSize(vizBarW - 1, 2);
+					vbar.updateHitbox();
+					vbar.y = FlxG.height - 2;
+					vbar.alpha = 1.0;
+				}
+			}
+		}
+		#end
+
+		if (!selectedSomethin)
+		{
+
+			if (controls.UI_UP_P)
+				changeItem(-1);
+
+			if (controls.UI_DOWN_P)
+				changeItem(1);
+
+			var allowMouse:Bool = allowMouse;
+			if (allowMouse && ((FlxG.mouse.deltaScreenX != 0 && FlxG.mouse.deltaScreenY != 0) || FlxG.mouse.justPressed)) //FlxG.mouse.deltaScreenX/Y checks is more accurate than FlxG.mouse.justMoved
+			{
+				allowMouse = false;
+				Cursor.show();
+				timeNotMoving = 0;
+
+				var selectedItem:FlxSprite;
+				switch(curColumn)
+				{
+					case CENTER:
+						selectedItem = menuItems.members[curSelected];
+					case LEFT:
+						selectedItem = leftItem;
+					case RIGHT:
+						selectedItem = rightItem;
+				}
+
+				if(leftItem != null && FlxG.mouse.overlaps(leftItem))
+				{
+					allowMouse = true;
+					if(selectedItem != leftItem)
+					{
+						curColumn = LEFT;
+						changeItem();
+					}
+				}
+				else if(rightItem != null && FlxG.mouse.overlaps(rightItem))
+				{
+					allowMouse = true;
+					if(selectedItem != rightItem)
+					{
+						curColumn = RIGHT;
+						changeItem();
+					}
+				}
+				else
+				{
+					var dist:Float = -1;
+					var distItem:Int = -1;
+					for (i in 0...optionShit.length)
+					{
+						var memb:FlxSprite = menuItems.members[i];
+						if(FlxG.mouse.overlaps(memb))
+						{
+							var distance:Float = Math.sqrt(Math.pow(memb.getGraphicMidpoint().x - FlxG.mouse.screenX, 2) + Math.pow(memb.getGraphicMidpoint().y - FlxG.mouse.screenY, 2));
+							if (dist < 0 || distance < dist)
+							{
+								dist = distance;
+								distItem = i;
+								allowMouse = true;
+							}
+						}
+					}
+
+					if(distItem != -1 && selectedItem != menuItems.members[distItem])
+					{
+						curColumn = CENTER;
+						curSelected = distItem;
+						changeItem();
+					}
+				}
+			}
+			else
+			{
+				timeNotMoving += elapsed;
+				if(timeNotMoving > 2) Cursor.hide();
+			}
+
+			switch (curColumn)
+			{
+				case CENTER:
+					if(controls.UI_LEFT_P && leftOption != null)
+					{
+						curColumn = LEFT;
+						changeItem();
+					}
+					else if(controls.UI_RIGHT_P && rightOption != null)
+					{
+						curColumn = RIGHT;
+						changeItem();
+					}
+
+				case LEFT:
+					if(controls.UI_RIGHT_P)
+					{
+						curColumn = CENTER;
+						changeItem();
+					}
+
+				case RIGHT:
+					if(controls.UI_LEFT_P)
+					{
+						curColumn = CENTER;
+						changeItem();
+					}
+			}
+
+			if (controls.BACK)
+			{
+				selectedSomethin = true;
+				Cursor.hide();
+				FlxG.sound.play(Paths.sound('cancelMenu'));
+				MusicBeatState.switchState(new funkin.ui.title.TitleState());
+			}
+
+			if (controls.ACCEPT || (FlxG.mouse.overlaps(menuItems, FlxG.camera) && FlxG.mouse.justPressed && allowMouse))
+			{
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				selectedSomethin = true;
+				Cursor.hide();
+
+				if (ClientPrefs.data.flashing)
+					FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+
+				var item:FlxSprite;
+				var option:String;
+				switch(curColumn)
+				{
+					case CENTER:
+						option = optionShit[curSelected];
+						item = menuItems.members[curSelected];
+
+					case LEFT:
+						option = leftOption;
+						item = leftItem;
+
+					case RIGHT:
+						option = rightOption;
+						item = rightItem;
+				}
+
+				FlxFlicker.flicker(item, 1, 0.06, false, false, function(flick:FlxFlicker)
+				{
+					switch (option)
+					{
+						case 'story_mode':
+						MusicBeatState.switchState(new funkin.ui.story.StoryMenuState());
+					case 'freeplay':
+						MusicBeatState.switchState(new funkin.ui.freeplay.FreeplayState());
+
+					#if MODS_ALLOWED
+					case 'mods':
+						MusicBeatState.switchState(new funkin.modding.ModsMenuState());
+					#end
+
+					#if ACHIEVEMENTS_ALLOWED
+					case 'achievements':
+						MusicBeatState.switchState(new AchievementsMenuState());
+					#end
+
+					case 'credits':
+						MusicBeatState.switchState(new funkin.ui.credits.CreditsState());
+						case 'options':
+							MusicBeatState.switchState(new OptionsState());
+							OptionsState.onPlayState = false;
+							if (PlayState.SONG != null)
+							{
+								PlayState.SONG.arrowSkin = null;
+								PlayState.SONG.splashSkin = null;
+								PlayState.stageUI = 'normal';
+							}
+						default:
+							trace('Menu Item ${option} doesn\'t do anything');
+							selectedSomethin = false;
+							item.visible = true;
+					}
+				});
+				
+				for (memb in menuItems)
+				{
+					if(memb == item)
+						continue;
+
+					FlxTween.tween(memb, {alpha: 0}, 0.4, {ease: FlxEase.quadOut});
+				}
+			}
+			else if (controls.justPressed('debug_1') || touchPad.buttonE.justPressed)
+			{
+				selectedSomethin = true;
+				Cursor.hide();
+				MusicBeatState.switchState(new MasterEditorMenu());
+			}
+
+			#if mobile
+			if (touchPad.buttonX.justPressed)
+			{
+				lime.system.System.exit(0);
+			}
+			#end
+		}
+
+		super.update(elapsed);
+	}
+
+	function changeItem(change:Int = 0)
+	{
+		if(change != 0) curColumn = CENTER;
+		curSelected = FlxMath.wrap(curSelected + change, 0, optionShit.length - 1);
+		FlxG.sound.play(Paths.sound('scrollMenu'));
+
+		for (item in menuItems)
+		{
+			item.animation.play('idle');
+			item.centerOffsets();
+		}
+
+		var selectedItem:FlxSprite;
+		switch(curColumn)
+		{
+			case CENTER:
+				selectedItem = menuItems.members[curSelected];
+			case LEFT:
+				selectedItem = leftItem;
+			case RIGHT:
+				selectedItem = rightItem;
+		}
+		selectedItem.animation.play('selected');
+		selectedItem.centerOffsets();
+		camFollow.y = selectedItem.getGraphicMidpoint().y;
+	}
+
+	override function destroy():Void {
+		#if funkin.vis
+		_analyzer = null;
+		_analyzerLevels = null;
+		if(_vizBars != null) { _vizBars.destroy(); _vizBars = null; }
+		#end
+		super.destroy();
+	}
+}

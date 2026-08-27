@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Troll.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="idle0000" x="0" y="1281" width="385" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0000" x="385" y="1281" width="385" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0001" x="1096" y="653" width="385" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0002" x="1720" y="0" width="390" height="661" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0003" x="593" y="0" width="577" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0004" x="1170" y="0" width="550" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0005" x="0" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0006" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0007" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0008" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0009" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0010" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0011" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0012" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0013" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0014" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0015" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0016" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0017" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0018" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0019" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0020" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0021" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0022" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0023" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0024" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0025" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0026" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0027" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0028" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0029" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0030" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0031" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="arma0032" x="548" y="653" width="548" height="628" frameX="-184" frameY="-133" frameWidth="768" frameHeight="1024"/>
+	<SubTexture name="trigged0000" x="0" y="0" width="593" height="653" frameX="-139" frameY="-108" frameWidth="768" frameHeight="1024"/>
+</TextureAtlas>
