@@ -354,7 +354,8 @@ jobs:
       
       - name: Compile
         run: haxelib run lime build linux -64bits --app-version="${{ env.APP_VERSION }}" -D officialBuild
-      
+        shell: bash 
+  
       - name: Publish Artifact
         uses: actions/upload-artifact@v7.0.0
         with:
@@ -426,7 +427,7 @@ jobs:
       
       - name: Compile
         run: |
-          haxelib run lime build android --app-version="${{ env.APP_VERSION }}" -D officialBuild -D HXCPP_IGNORE_WARNINGS
+          haxelib run lime build android --app-version="${{ env.APP_VERSION }}" -D officialBuild -D HXCPP_IGNORE_WARNINGS --verbose
       
       - name: Publish Artifact
         uses: actions/upload-artifact@v7.0.0
