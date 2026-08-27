@@ -325,10 +325,7 @@ class PlayState extends MusicBeatState
 	public var guitarHeroSustains:Bool = false;
 	public var instakillOnMiss:Bool = false;
 	public var cpuControlled:Bool = false;
-	// Dodge
-    public var canDodge:Bool = false;
-    public var dodged:Bool = false;
-    public var dodgeTimer:FlxTimer = null;
+	// Dodge era aqui!
     public var practiceMode:Bool = false;
 	public var perfectMode:Bool = false; // Perfect Mode - miss on anything below Sick
 	public var playOpponent:Bool = false; // Opponent Mode - play as opponent
